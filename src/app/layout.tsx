@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from '@/context/AuthContext';
+// import { SidebarProvider } from '@/context/SidebarContext'
+import { ThemeProvider } from "@/components/theme-provider";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar";
+import { ModeToggle } from "@/components/ui/ModeToggle"
+import OnThisPage from "@/components/OnThisPage";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +18,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const nunito = Nunito({
+  variable: "--font-nunito-sans",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,10 +37,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}
       >
         <AuthProvider>
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <SidebarProvider>
+              <AppSidebar />
+              <div className="w-full">
+                <div className="sticky top-0 flex items-center justify-between z-10 py-1 pr-1 bg-background border-b border-border">
+                  <SidebarTrigger className="mt-2" />
+                  <ModeToggle />
+                </div>
+                <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+                  <main className="">
+                    {children}
+                  </main>
+                  <aside>
+                    <OnThisPage />
+                  </aside>
+                </div>
+              </div>
+              
+            </SidebarProvider>
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>
