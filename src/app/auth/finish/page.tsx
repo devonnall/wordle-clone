@@ -1,16 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { isSignInWithEmailLink, signInWithEmailLink, updateProfile } from 'firebase/auth';
 import { auth } from '@/lib/firebase/firebaseAuth';
-import { doc, setDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase/firebaseDb'; 
-
 
 export default function FinishAuthPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
   useEffect(() => {
     // Check if the link is a valid sign-in link

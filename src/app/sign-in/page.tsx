@@ -1,6 +1,6 @@
 'use client'
 
-import Image from "next/image"
+// import Image from "next/image"
 import { sendSignInLinkToEmail } from "firebase/auth"
 import { useState } from "react"
 import { auth } from "@/lib/firebase/firebaseAuth"

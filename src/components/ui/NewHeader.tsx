@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from "react";
-import { useSidebar } from "@/context/SidebarContext";
+import Image from "next/image";
 import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
 import { HomeIcon, PuzzlePieceIcon, CommandLineIcon, Cog6ToothIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
@@ -17,7 +17,6 @@ import clsx from "clsx";
  */
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { toggle } = useSidebar()
   const firstFocusable = useRef<HTMLAnchorElement | null>(null);
   const menuBtnRef = useRef<HTMLButtonElement | null>(null);
   const { user } = useAuth();
@@ -156,11 +155,11 @@ export default function Header() {
 
             <div className={clsx("transition-transform duration-300", gamesOpen ? "flex flex-col gap-1 bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800" : "hidden")}>
               <Link href="/games/wordly" className="flex items-center gap-4 text-sm px-5 py-2 hover:bg-gray-50 dark:hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
-                <img src="/wordly-small-icon.svg" alt="Wordly" className="w-5 h-5" />
+                <Image src="/wordly-small-icon.svg" alt="Wordly" className="w-5 h-5" />
                 <span className="text-neutral-200">Wordly</span>
               </Link>
               <Link href="/games/wordly" className="flex items-center gap-4 text-sm px-5 py-2 hover:bg-gray-50 dark:hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
-                <img src="/spelling-bee-icon.svg" alt="Spelling Bee" className="w-5 h-5" />
+                <Image src="/spelling-bee-icon.svg" alt="Spelling Bee" className="w-5 h-5" />
                 <span className="text-neutral-200">Spelling Bee</span>
               </Link>
             </div>

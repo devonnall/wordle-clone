@@ -1,9 +1,9 @@
-import Link from "next/link"
-import { getWords } from "@/lib/getWords"
-import WordleGrid from "@/components/ui/WordleGrid"
-import Header from "@/components/ui/Header"
-import NewHeader from "@/components/ui/NewHeader"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+// import Link from "next/link"
+// import { getWords } from "@/lib/getWords"
+// import WordleGrid from "@/components/ui/WordleGrid"
+// import Header from "@/components/ui/Header"
+// import NewHeader from "@/components/ui/NewHeader"
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 
 export default function Home() {

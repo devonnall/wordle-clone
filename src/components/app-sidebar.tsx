@@ -1,14 +1,9 @@
 import { 
-    Calendar, 
     Home, 
-    Inbox, 
-    Search, 
-    Settings, 
     LogOut, 
     UserRound, 
     SquarePen ,
     MapPinHouse,
-    Joystick
 } from "lucide-react"
 
 import {
@@ -25,19 +20,15 @@ import {
 } from "@/components/ui/sidebar"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import Logo from "./ui/icons/logo"
 
 import {
     Select,
     SelectContent,
-    SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
 
-import { Separator } from "./ui/separator"
 import Link from "next/link"
 
 // Menu items.
