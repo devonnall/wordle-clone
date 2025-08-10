@@ -3,10 +3,11 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { isSignInWithEmailLink, signInWithEmailLink, updateProfile } from 'firebase/auth';
-import { auth } from '@/lib/firebase/firebaseAuth';
+import { getClientAuth } from "@/lib/firebase/firebaseAuth";
 
 export default function FinishAuthPage() {
   const router = useRouter();
+  const auth = getClientAuth();
   // const searchParams = useSearchParams();
 
   useEffect(() => {

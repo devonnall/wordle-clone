@@ -1,6 +1,11 @@
-'use client'
+"use client";
+import { getAuth, type Auth } from "firebase/auth";
+import { getFirebaseApp } from "./firebaseConfig";
 
-import { app } from '@/lib/firebase/firebaseConfig';
-import { getAuth } from 'firebase/auth';
+let _auth: Auth | undefined;
 
-export const auth = getAuth(app);
+export function getClientAuth(): Auth {
+  if (_auth) return _auth;
+  _auth = getAuth(getFirebaseApp());
+  return _auth;
+}

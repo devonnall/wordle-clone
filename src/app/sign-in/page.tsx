@@ -3,7 +3,7 @@
 // import Image from "next/image"
 import { sendSignInLinkToEmail } from "firebase/auth"
 import { useState } from "react"
-import { auth } from "@/lib/firebase/firebaseAuth"
+import { getClientAuth } from "@/lib/firebase/firebaseAuth";
 
 const actionCodeSettings = {
     url: 'http://localhost:3000/auth/finish',
@@ -12,6 +12,7 @@ const actionCodeSettings = {
 
 export default function SignIn() {
     const [email, setEmail] = useState('')
+    const auth = getClientAuth();
 
     const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
