@@ -1,12 +1,20 @@
 // app/ClientProviders.tsx (CLIENT)
 "use client";
 
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import OnThisPage from "@/components/OnThisPage";
+
+function EnvProbe() {
+    useEffect(() => {
+      console.log("API key prefix:", process.env.NEXT_PUBLIC_FIREBASE_API_KEY?.slice(0, 6));
+    }, []);
+    return null;
+  }
 
 // Wrap the provider that touches Firebase Web SDK:
 const AuthProviderNoSSR = dynamic(() => import("@/context/AuthProvider.client"), {
@@ -16,6 +24,7 @@ const AuthProviderNoSSR = dynamic(() => import("@/context/AuthProvider.client"),
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <EnvProbe />
       <SidebarProvider>
         <AppSidebar />
         <div className="w-full">
