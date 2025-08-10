@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyArtOQG2VBVIsczHIqcp04iOx7DZvGou1M",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "word-games-505ee.firebaseapp.com",
   projectId: "word-games-505ee",
   storageBucket: "word-games-505ee.firebasestorage.app",
