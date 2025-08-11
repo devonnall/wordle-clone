@@ -36,7 +36,7 @@ export default function Home() {
         // </article>
 
         <Article className="mb-8">
-            <ArticleTitle>Hello, I'm Devon 👋</ArticleTitle>
+            <ArticleTitle>Hello, I&apos;m Devon 👋</ArticleTitle>
             <ArticleSubtitle>Full-stack developer with a curiosity for data and the stories it tells</ArticleSubtitle>
             <ArticleSeparator className="mb-8" />
             <ArticleContent>
