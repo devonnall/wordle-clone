@@ -4,6 +4,7 @@ import {
     UserRound, 
     SquarePen ,
     MapPinHouse,
+    ContactRound,
 } from "lucide-react"
 
 import {
@@ -19,6 +20,8 @@ import {
   SidebarFooter,
 } from "@/components/ui/sidebar"
 
+import NextLogo from "./ui/icons/next-logo"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 import {
@@ -30,6 +33,7 @@ import {
   } from "@/components/ui/select"
 
 import Link from "next/link"
+import ViteLogo from "./ui/icons/vite-logo"
 
 // Menu items.
 const items = [
@@ -39,23 +43,32 @@ const items = [
     icon: Home,
   },
   {
-    title: "Blog",
+    title: "About Me",
     url: "#",
-    icon: SquarePen,
+    icon: ContactRound,
   },
 ]
 
 const projects = [
     {
         title: "This website",
-        url: "#",
+        url: "projects/portfolio",
         icon: MapPinHouse,
     },
-    // {
-    //     title: "Word games",
-    //     url: "#",
-    //     icon: Joystick,
-    // },
+]
+
+const frameworks = [
+    {
+        title: "Next.js",
+        url: "/frameworks/nextjs",
+        icon: NextLogo,
+        className: "dark:fill-white"
+    },
+    {
+        title: "Vite",
+        url: "/frameworks/vite",
+        icon: ViteLogo,
+    }
 ]
 
 export function AppSidebar() {
@@ -83,7 +96,9 @@ export function AppSidebar() {
                     </SidebarMenu>
                 </SidebarGroup>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Projects</SidebarGroupLabel>
+                    <Link href="/projects">
+                        <SidebarGroupLabel>Projects</SidebarGroupLabel>
+                    </Link>
                     <SidebarGroupContent>
                         <SidebarMenu>
                         {projects.map((item) => (
@@ -92,6 +107,25 @@ export function AppSidebar() {
                                     <a href={item.url}>
                                     <item.icon />
                                     <span>{item.title}</span>
+                                    </a>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        ))}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+                <SidebarGroup>
+                    <Link href="/frameworks">
+                        <SidebarGroupLabel>Frameworks</SidebarGroupLabel>
+                    </Link>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                        {frameworks.map((framework) => (
+                            <SidebarMenuItem key={framework.title}>
+                                <SidebarMenuButton asChild>
+                                    <a href={framework.url}>
+                                    <framework.icon className={framework.className} />
+                                    <span>{framework.title}</span>
                                     </a>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>

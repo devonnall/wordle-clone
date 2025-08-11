@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
@@ -29,17 +30,23 @@ export default function ClientProviders({ children }: { children: React.ReactNod
         <AppSidebar />
         <div className="w-full">
           <div className="sticky top-0 flex items-center justify-between z-10 py-1 pr-1 bg-background border-b border-border">
-            <SidebarTrigger className="mt-2" />
+            <SidebarTrigger className="ml-2" />
+            <Link href="/" className="font-extrabold text-2xl font-nunito-sans dark:text-white">
+                Devon Nall
+            </Link>
             <ModeToggle />
           </div>
 
-          <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+          <div className="mx-auto max-w-5xl">
             <AuthProviderNoSSR>
-              <main>{children}</main>
+              <div className="mx-4 mt-12 grid grid-cols-1 xl:grid-cols-[1fr_256px]">
+                  <main className="mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl">{children}</main>
+                  <aside className="hidden xl:block">
+                    <OnThisPage />
+                  </aside>
+              </div>
             </AuthProviderNoSSR>
-            <aside>
-              <OnThisPage />
-            </aside>
+            
           </div>
         </div>
       </SidebarProvider>
