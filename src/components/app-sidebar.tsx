@@ -1,8 +1,12 @@
+'use client'
+
+import { usePathname } from "next/navigation"
+
 import { 
     Home, 
     LogOut, 
     UserRound, 
-    SquarePen ,
+    SquarePen,
     MapPinHouse,
     ContactRound,
 } from "lucide-react"
@@ -39,20 +43,20 @@ import ViteLogo from "./ui/icons/vite-logo"
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
     title: "About Me",
-    url: "#",
+    url: "/about",
     icon: ContactRound,
   },
 ]
 
 const projects = [
     {
-        title: "This website",
-        url: "projects/portfolio",
+        title: "Portfolio",
+        url: "/projects/portfolio",
         icon: MapPinHouse,
     },
 ]
@@ -68,13 +72,16 @@ const frameworks = [
         title: "Vite",
         url: "/frameworks/vite",
         icon: ViteLogo,
+        className: ""
     }
 ]
 
 export function AppSidebar() {
     const name = 'Devon Nall'
+    const pathname = usePathname()
+
     return (
-        <Sidebar variant="floating">
+        <Sidebar variant="sidebar">
             <SidebarHeader className="ml-2 mt-2">
                 <Link href="/" className="font-extrabold text-lg font-nunito-sans text-blue-500 dark:text-white">
                     Devon Nall
@@ -85,7 +92,7 @@ export function AppSidebar() {
                     <SidebarMenu>
                         {items.map((item) => (
                             <SidebarMenuItem key={item.title}>
-                                <SidebarMenuButton asChild>
+                                <SidebarMenuButton asChild isActive={pathname === item.url}>
                                     <a href={item.url}>
                                         <item.icon />
                                         <span>{item.title}</span>
@@ -101,12 +108,12 @@ export function AppSidebar() {
                     </Link>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                        {projects.map((item) => (
-                            <SidebarMenuItem key={item.title}>
-                                <SidebarMenuButton asChild>
-                                    <a href={item.url}>
-                                    <item.icon />
-                                    <span>{item.title}</span>
+                        {projects.map((project) => (
+                            <SidebarMenuItem key={project.title}>
+                                <SidebarMenuButton asChild isActive={pathname === project.url}>
+                                    <a href={project.url}>
+                                        <project.icon />
+                                        <span>{project.title}</span>
                                     </a>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -122,10 +129,10 @@ export function AppSidebar() {
                         <SidebarMenu>
                         {frameworks.map((framework) => (
                             <SidebarMenuItem key={framework.title}>
-                                <SidebarMenuButton asChild>
+                                <SidebarMenuButton asChild isActive={pathname === framework.url}>
                                     <a href={framework.url}>
-                                    <framework.icon className={framework.className} />
-                                    <span>{framework.title}</span>
+                                        <framework.icon className={framework.className} />
+                                        <span>{framework.title}</span>
                                     </a>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>

@@ -37,7 +37,7 @@ export default function TableOfContents({ className = '' }: TableOfContentsProps
     });
 
     setHeadings(headingData);
-    setActiveId(headingData[0].id)
+    if (headingData.length !== 0) setActiveId(headingData[0].id)
   }, []);
 
   useEffect(() => {

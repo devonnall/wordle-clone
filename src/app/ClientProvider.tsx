@@ -29,7 +29,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       <SidebarProvider>
         <AppSidebar />
         <div className="w-full">
-          <div className="sticky top-0 flex items-center justify-between z-10 py-1 pr-1 bg-background border-b border-border">
+          <div className="sticky top-0 flex items-center justify-between bg-background z-10 py-1 pr-1 border-b border-border">
             <SidebarTrigger className="ml-2" />
             <Link href="/" className="font-extrabold text-2xl font-nunito-sans dark:text-white">
                 Devon Nall
