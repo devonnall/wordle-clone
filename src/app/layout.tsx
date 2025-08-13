@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
@@ -35,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
 
               <div className="mx-auto max-w-5xl">
-                <div className="mx-4 mt-12 grid grid-cols-1 xl:grid-cols-[1fr_256px]">
+                <div className="mx-4 mt-12 grid grid-cols-1 xl:grid-cols-[1fr_256px]" >
                     <main className="mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl">{children}</main>
                     <aside className="hidden xl:block">
                       <OnThisPage />
