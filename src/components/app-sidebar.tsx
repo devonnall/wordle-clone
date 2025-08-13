@@ -141,7 +141,7 @@ export function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            <SidebarFooter>
+            {/* <SidebarFooter>
                 <Select>
                     <SelectTrigger className="relative py-6 w-full">
                         <Avatar>
@@ -155,14 +155,13 @@ export function AppSidebar() {
                             <UserRound />
                             Account
                         </SelectItem>
-                        {/* <Separator className="my-1" /> */}
                         <SelectItem value="sign out" className="flex">
                             <LogOut className="text-destructive" />
                             Sign Out
                         </SelectItem>
                     </SelectContent>
                 </Select>
-            </SidebarFooter>
+            </SidebarFooter> */}
         </Sidebar>
     )
 }

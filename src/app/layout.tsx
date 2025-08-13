@@ -2,7 +2,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
-import ClientProviders from "./ClientProvider";
+import { ThemeProvider } from "@/components/theme-provider";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
+import { ModeToggle } from "@/components/ui/ModeToggle";
+import OnThisPage from "@/components/OnThisPage";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +22,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}>
-        <ClientProviders>
-          {children}
-        </ClientProviders>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <SidebarProvider>
+            <AppSidebar />
+            <div className="w-full">
+              <div className="sticky top-0 flex items-center justify-between bg-background z-10 py-1 pr-1 border-b border-border">
+                <SidebarTrigger className="ml-2" />
+                <Link href="/" className="font-extrabold text-2xl font-nunito-sans dark:text-white">
+                    Devon Nall
+                </Link>
+                <ModeToggle />
+              </div>
+
+              <div className="mx-auto max-w-5xl">
+                <div className="mx-4 mt-12 grid grid-cols-1 xl:grid-cols-[1fr_256px]">
+                    <main className="mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl">{children}</main>
+                    <aside className="hidden xl:block">
+                      <OnThisPage />
+                    </aside>
+                </div>
+              </div>
+            </div>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
