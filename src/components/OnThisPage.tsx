@@ -1,4 +1,4 @@
-// components/TableOfContents.tsx
+'use client'
 import { useEffect, useState } from 'react';
 
 interface Heading {
@@ -109,7 +109,7 @@ export default function TableOfContents({ className = '' }: TableOfContentsProps
                 ${getIndentClass(heading.level)}
                 ${
                   activeId === heading.id
-                    ? 'text-blue-600 border-blue-600 font-medium'
+                    ? 'text-blue-600 dark:text-blue-400 font-medium'
                     : ''
                 }
               `}
