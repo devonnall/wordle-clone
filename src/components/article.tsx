@@ -141,7 +141,7 @@ const ArticleCardTitle = ({
     children?: React.ReactNode,
 }) => {
     return (
-        <p className={`text-lg font-semibold ${className}`}>
+        <p className={`text-lg font-semibold text-foreground ${className}`}>
             {children}
         </p>
     )
@@ -172,7 +172,7 @@ const ArticleCard = ({
 }) => {
     return (
         <Link href={href}>
-            <div className={`p-6 pt-4 space-y-1 h-40 rounded-lg border border-border hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 ${className}`}>
+            <div className={`h-40 p-6 pt-4 space-y-1 rounded-lg border border-border hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 ${className}`}>
                 {children}
             </div>
         </Link>

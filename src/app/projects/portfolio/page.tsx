@@ -1,9 +1,3 @@
-
-
-export default function Portfolio() {
-    return (
-        <div className="">
-            Hello World
-        </div>
-    )
+export default function Page() {
+    return <div>Coming soon</div>
 }

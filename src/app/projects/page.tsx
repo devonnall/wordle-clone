@@ -1,9 +1,7 @@
+import Projects from '@/markdown/projects.mdx'
 
-
-export default function Projects() {
+export default function Page() {
     return (
-        <div className="flex items-center justify-center">
-            Hello World, coming soon
-        </div>
+        <Projects/>
     )
 }

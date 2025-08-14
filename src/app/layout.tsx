@@ -34,8 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
 
               <div className="mx-auto max-w-5xl">
-                <div className="mx-4 mt-12 grid grid-cols-1 xl:grid-cols-[1fr_256px]" >
-                    <main className="mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl">{children}</main>
+                <div className="mx-6 mt-12 grid grid-cols-1 xl:grid-cols-[1fr_256px]" >
+                    <main className="mx-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl">{children}</main>
                     <aside className="hidden xl:block">
                       <OnThisPage />
                     </aside>
