@@ -38,7 +38,7 @@ export default function Page() {
                             <div className="space-y-1">
                                 <div className="text-xs text-muted-foreground">Class Project</div>
                                 <div className="font-semibold text-sm">Song Popularity Predictor</div>
-                                <p className="text-xs text-muted-foreground">Predicted a given song's popularity based on its features with ML algorithms.</p>
+                                <p className="text-xs text-muted-foreground">Predicted a given song&apos;s popularity based on its features with ML algorithms.</p>
                                 <div className="flex gap-1">
                                     <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Machine Learning</div>
                                     <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Python</div>
