@@ -40,8 +40,8 @@ export default function Page() {
                                 <div className="font-semibold text-sm">Song Popularity Predictor</div>
                                 <p className="text-xs text-muted-foreground">Predicted a given song&apos;s popularity based on its features with ML algorithms.</p>
                                 <div className="flex gap-1">
-                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Machine Learning</div>
-                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Python</div>
+                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-900">Machine Learning</div>
+                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-900">Python</div>
                                 </div>
                             </div>
                             <MoveUpRight className="absolute top-4 right-4 size-4 text-indigo-400" />
@@ -51,9 +51,9 @@ export default function Page() {
                                 <div className="font-semibold text-sm">Meal Planner</div>
                                 <p className="text-xs text-muted-foreground">Helped develop an early prototype of a meal planning app with AI suggestions powered by Gemini with Flutter.</p>
                                 <div className="flex gap-1">
-                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Flutter</div>
-                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Python</div>
-                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-500">Flask</div>
+                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-900">Flutter</div>
+                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-900">Python</div>
+                                    <div className="text-xs p-1 px-2 mt-2 rounded-md w-min text-nowrap bg-indigo-100 text-indigo-900">Flask</div>
                                 </div>
                             </div>
                             <MoveUpRight className="absolute top-4 right-4 size-4 text-indigo-400" />
