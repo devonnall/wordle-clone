@@ -4,8 +4,13 @@ import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
-export function ModeToggle() {
+export function ModeToggle({
+  className
+}: {
+  className?: string
+}) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   React.useEffect(() => setMounted(true), [])
@@ -14,7 +19,7 @@ export function ModeToggle() {
   return (
     <Button
       variant="outline"
-      className="m-1"
+      className={cn("m-1", className)}
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
